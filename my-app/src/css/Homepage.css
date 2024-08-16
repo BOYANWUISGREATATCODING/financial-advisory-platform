@@ -150,6 +150,71 @@ body {
   padding: 10px;
 }
 
+/* Container styling */
+#menu-container {
+  position: relative;
+}
+
+/* Menu button styling */
+.nav-menu-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.icon-menu:before {
+  content: "\2630"; /* Unicode for hamburger menu */
+  font-size: 24px;
+}
+
+/* Pop-out menu styling */
+.pop-out-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+  padding: 20px;
+  box-shadow: 2px 0px 5px rgba(0,0,0,0.5);
+}
+
+/* Close button styling */
+.menu-close {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.icon-close:before {
+  content: "\2715"; /* Unicode for close (X) icon */
+  font-size: 24px;
+}
+
+/* Show menu when active */
+.pop-out-menu.active {
+  left: 0;
+}
+
+/* Menu items styling */
+.menu-items a {
+  display: block;
+  margin: 10px 0;
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+}
+
+.menu-items a:hover {
+  color: #0073e6;
+}
+
+
 /* body, html {
   margin: 0;
   padding: 0;

@@ -327,7 +327,47 @@
 // export default Homepage;
 
 
-import React from 'react';
+// import React from 'react';
+// import Navbar from './components/NavBar';
+// import Ticker from './components/Ticker';
+// import QuickLinks from './components/QuickLinks';
+// import MainNews from './components/MainNews';
+// import SideNews from './components/SideNews';
+// import './css/Homepage.css';
+// import FeaturedCard from './FeaturedCard';
+// import SecondaryCardContainer from './SecondaryCardContainer';
+
+// const Homepage = () => {
+//     return (
+//         <div className="homepage">
+//             <nav className="navbar">
+//                 {/* Add navbar content here */}
+//                 <a href="#">Markets</a>
+//                 <a href="#">Business</a>
+//                 <a href="#">Investing</a>
+//                 <a href="#">Tech</a>
+//                 <a href="#">Politics</a>
+//             </nav>
+
+//             <div className="content-grid">
+//                 <FeaturedCard />
+//                 <SecondaryCardContainer />
+//                 <MainNews />
+//                 <SideNews />
+//             </div>
+
+//             <div className="ticker-container">
+//                 <Ticker />
+//             </div>
+//         </div>
+//     );
+// };
+
+// export default Homepage;
+
+
+
+import React, { useEffect } from 'react';
 import Navbar from './components/NavBar';
 import Ticker from './components/Ticker';
 import QuickLinks from './components/QuickLinks';
@@ -337,30 +377,68 @@ import './css/Homepage.css';
 import FeaturedCard from './FeaturedCard';
 import SecondaryCardContainer from './SecondaryCardContainer';
 
-const Homepage = () => {
-    return (
-        <div className="homepage">
-            <nav className="navbar">
-                {/* Add navbar content here */}
-                <a href="#">Markets</a>
-                <a href="#">Business</a>
-                <a href="#">Investing</a>
-                <a href="#">Tech</a>
-                <a href="#">Politics</a>
-            </nav>
+function Homepage() {
+  useEffect(() => {
+    const menuButton = document.querySelector('.nav-menu-button');
+    const closeButton = document.querySelector('.menu-close');
+    const popOutMenu = document.querySelector('.pop-out-menu');
 
-            <div className="content-grid">
-                <FeaturedCard />
-                <SecondaryCardContainer />
-                <MainNews />
-                <SideNews />
-            </div>
+    // Define event listener functions
+    const openMenu = () => {
+      popOutMenu.classList.add('active');
+    };
 
-            <div className="ticker-container">
-                <Ticker />
+    const closeMenu = () => {
+      popOutMenu.classList.remove('active');
+    };
+
+    // Open the menu
+    menuButton.addEventListener('click', openMenu);
+
+    // Close the menu
+    closeButton.addEventListener('click', closeMenu);
+
+    // Cleanup event listeners
+    return () => {
+      menuButton.removeEventListener('click', openMenu);
+      closeButton.removeEventListener('click', closeMenu);
+    };
+  }, []);
+
+  return (
+    <div className="homepage">
+      <header className="App-header">
+        <div id="menu-container">
+          {/* Pop-out Menu Button */}
+          <button className="nav-menu-button" aria-label="Open Navigation Menu">
+            <span className="icon-menu"></span>
+          </button>
+          {/* Pop-out Menu */}
+          <div className="pop-out-menu">
+            {/* Close button */}
+            <button className="menu-close" aria-label="Close Navigation Menu">
+              <span className="icon-close"></span>
+            </button>
+            {/* Menu items */}
+            <div className="menu-items">
+              {/* Additional menu items can be added here */}
             </div>
+          </div>
         </div>
-    );
-};
+
+        <Navbar />
+        <Ticker />
+        <QuickLinks />
+      </header>
+
+      <div className="content-grid">
+        <FeaturedCard />
+        <SecondaryCardContainer />
+        <MainNews />
+        <SideNews />
+      </div>
+    </div>
+  );
+}
 
 export default Homepage;
