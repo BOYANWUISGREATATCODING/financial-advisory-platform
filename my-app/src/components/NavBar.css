@@ -1,0 +1,24 @@
+/* Navbar.css */
+.navbar {
+    background-color: #002f6c;
+    padding: 10px 20px;
+  }
+  
+  .navbar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar-item {
+    color: white;
+    margin-right: 20px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .navbar-item:hover {
+    text-decoration: underline;
+  }
+  

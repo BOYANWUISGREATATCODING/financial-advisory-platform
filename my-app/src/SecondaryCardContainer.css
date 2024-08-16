@@ -1,0 +1,25 @@
+.secondary-card-container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .secondary-card-container li {
+    margin-bottom: 20px;
+  }
+  
+  .secondary-card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .secondary-card-headline {
+    margin-top: 10px;
+  }
+  
+  .secondary-card-headline h3 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  

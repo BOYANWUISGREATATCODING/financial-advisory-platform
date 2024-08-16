@@ -1,0 +1,34 @@
+.ticker-wrapper {
+  overflow: hidden;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.ticker {
+  display: flex;
+  animation: ticker 30s linear infinite;
+}
+
+.ticker-item {
+  padding: 0 15px;
+  font-size: 14px;
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
+
+@keyframes ticker {
+  from {
+      transform: translateX(100%);
+  }
+  to {
+      transform: translateX(-100%);
+  }
+}
+
+  

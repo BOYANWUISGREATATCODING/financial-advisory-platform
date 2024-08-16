@@ -1,0 +1,27 @@
+.featured-card {
+    position: relative;
+  }
+  
+  .featured-card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .featured-card-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  }
+  
+  .featured-card-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .featured-card-description {
+    font-size: 16px;
+  }
+  

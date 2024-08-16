@@ -133,7 +133,7 @@
   } */
 
 
-  .index {
+  /* .index {
     padding: 20px;
   }
   
@@ -219,7 +219,7 @@
     cursor: pointer;
     transition: background-color 0.3s;
     position: relative;
-    flex: 1 1 40%; /* Adjusted to fit two items per row */
+    flex: 1 1 40%; 
   }
   
   .index-item.hovered {
@@ -258,13 +258,13 @@
     width: 100%;
     height: 100px;
     position: absolute;
-    top: 80px; /* Position below the hovered item */
+    top: 80px; 
     left: 0;
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 5px;
     z-index: 1;
     padding: 10px;
-  }
+  } */
   
   
