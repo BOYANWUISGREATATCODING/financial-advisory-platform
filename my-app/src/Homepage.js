@@ -133,12 +133,6 @@
 
 // export default Home;
 
-
-
-
-
-
-
 // import React, { useState, useEffect } from 'react';
 // import './Homepage.css';
 
@@ -301,7 +295,6 @@
 
 // export default Home;
 
-
 // import React from 'react';
 // import Navbar from './components/NavBar';
 // import Ticker from './components/Ticker';
@@ -325,7 +318,6 @@
 // };
 
 // export default Homepage;
-
 
 // import React from 'react';
 // import Navbar from './components/NavBar';
@@ -365,46 +357,44 @@
 
 // export default Homepage;
 
-
-
-import React, { useEffect } from 'react';
-import Navbar from './components/NavBar';
-import Ticker from './components/Ticker';
-import QuickLinks from './components/QuickLinks';
-import MainNews from './components/MainNews';
-import SideNews from './components/SideNews';
-import './css/Homepage.css';
-import FeaturedCard from './FeaturedCard';
-import SecondaryCardContainer from './SecondaryCardContainer';
+import React, { useEffect } from "react";
+import Navbar from "./components/NavBar";
+import Ticker from "./components/Ticker";
+import QuickLinks from "./components/QuickLinks";
+import MainNews from "./components/MainNews";
+import SideNews from "./components/SideNews";
+import Stock from "./components/Stock.js";
+import "./css/Homepage.css";
+import FeaturedCard from "./FeaturedCard";
+import SecondaryCardContainer from "./SecondaryCardContainer";
 
 function Homepage() {
   useEffect(() => {
-    const menuButton = document.querySelector('.nav-menu-button');
-    const closeButton = document.querySelector('.menu-close');
-    const popOutMenu = document.querySelector('.pop-out-menu');
+    const menuButton = document.querySelector(".nav-menu-button");
+    const closeButton = document.querySelector(".menu-close");
+    const popOutMenu = document.querySelector(".pop-out-menu");
 
     // Define event listener functions
     const openMenu = () => {
-      popOutMenu.classList.add('active');
+      popOutMenu.classList.add("active");
     };
 
     const closeMenu = () => {
-      popOutMenu.classList.remove('active');
+      popOutMenu.classList.remove("active");
     };
 
     // Open the menu
-    menuButton.addEventListener('click', openMenu);
+    menuButton.addEventListener("click", openMenu);
 
     // Close the menu
-    closeButton.addEventListener('click', closeMenu);
+    closeButton.addEventListener("click", closeMenu);
 
     // Cleanup event listeners
     return () => {
-      menuButton.removeEventListener('click', openMenu);
-      closeButton.removeEventListener('click', closeMenu);
+      menuButton.removeEventListener("click", openMenu);
+      closeButton.removeEventListener("click", closeMenu);
     };
   }, []);
-
   return (
     <div className="homepage">
       <header className="App-header">
@@ -426,11 +416,11 @@ function Homepage() {
           </div>
         </div>
 
-        <Navbar />
+        <Navbar/>
         <Ticker />
         <QuickLinks />
       </header>
-
+      <Stock />
       <div className="content-grid">
         <FeaturedCard />
         <SecondaryCardContainer />

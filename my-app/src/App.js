@@ -80,7 +80,7 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <h1>Financial Advisory Platform</h1>
+                <h1 className="text-3xl font-bold">Financial Advisory Platform</h1>
             </header>
             <Homepage />
         </div>
