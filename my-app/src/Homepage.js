@@ -367,8 +367,8 @@ import Stock from "./components/Stock.js";
 import "./css/Homepage.css";
 import FeaturedCard from "./FeaturedCard";
 import SecondaryCardContainer from "./SecondaryCardContainer";
-
-function Homepage() {
+import { Row, Col } from 'antd'
+function Homepage () {
   useEffect(() => {
     const menuButton = document.querySelector(".nav-menu-button");
     const closeButton = document.querySelector(".menu-close");
@@ -416,16 +416,27 @@ function Homepage() {
           </div>
         </div>
 
-        <Navbar/>
+        <Navbar />
         <Ticker />
         <QuickLinks />
       </header>
       <Stock />
-      <div className="content-grid">
-        <FeaturedCard />
-        <SecondaryCardContainer />
-        <MainNews />
-        <SideNews />
+      <div>
+        <Row gutter={16} >
+          <Col className="gutter-row" span={12}>
+            <FeaturedCard />
+          </Col>
+          <Col className="gutter-row" span={6}>
+            <SecondaryCardContainer />
+          </Col>
+          <Col className="gutter-row" span={6}>
+            <SideNews />
+          </Col>
+        </Row>
+
+
+        {/* <MainNews /> */}
+
       </div>
     </div>
   );

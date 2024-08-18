@@ -5,9 +5,13 @@
   }
   
   .secondary-card-container li {
-    margin-bottom: 20px;
+    height: 195px;
+    position: relative;
   }
   
+  .secondary-card-container li + li {
+    margin-top: 7.5px;
+  }
   .secondary-card-image {
     width: 100%;
     height: auto;
@@ -15,7 +19,10 @@
   }
   
   .secondary-card-headline {
-    margin-top: 10px;
+    position: absolute;
+    padding: 0 10px;
+    bottom: 10px;
+    width: 100%;
   }
   
   .secondary-card-headline h3 {
