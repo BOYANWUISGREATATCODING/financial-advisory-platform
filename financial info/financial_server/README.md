@@ -1,4 +1,3 @@
-这是开发的金融咨询平台，如需查看详情，请查阅网站：https://boyanwuisgreatatcoding.github.io/financial-advisory-platform
 # 数据库目录
 ./financial info/financial_server
 ## 数据库环境部署
