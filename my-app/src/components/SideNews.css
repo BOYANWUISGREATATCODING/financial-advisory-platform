@@ -1,21 +1,20 @@
-/* SideNews.css */
 .side-news {
-    border-left: 1px solid #ddd;
-    padding-left: 20px;
-  }
-  
-  .side-news-item {
-    margin-bottom: 15px;
-  }
-  
-  .side-news-time {
-    font-size: 12px;
-    color: #888;
-  }
-  
-  .side-news-title {
-    font-size: 14px;
-    font-weight: bold;
-    color: #333;
-  }
-  
+  padding: 10px;
+  background-color: #f8f9fa;
+}
+
+.side-news-item {
+  margin-bottom: 15px;
+}
+
+.side-news-time {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.side-news-title {
+  font-size: 14px;
+  color: #000;
+  font-weight: bold;
+}
+

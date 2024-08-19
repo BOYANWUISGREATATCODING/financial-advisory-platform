@@ -399,17 +399,13 @@ function Homepage () {
     <div className="homepage">
       <header className="App-header">
         <div id="menu-container">
-          {/* Pop-out Menu Button */}
           <button className="nav-menu-button" aria-label="Open Navigation Menu">
             <span className="icon-menu"></span>
           </button>
-          {/* Pop-out Menu */}
           <div className="pop-out-menu">
-            {/* Close button */}
             <button className="menu-close" aria-label="Close Navigation Menu">
               <span className="icon-close"></span>
             </button>
-            {/* Menu items */}
             <div className="menu-items">
               {/* Additional menu items can be added here */}
             </div>
@@ -419,19 +415,22 @@ function Homepage () {
         <Navbar />
         <Ticker />
         <QuickLinks />
-      </header>
-      <Stock />
-      <div>
+        </header>
+        <Stock />
+        <Ticker />
+        <div>
         <Row gutter={16} >
           <Col className="gutter-row" span={12}>
             <FeaturedCard />
           </Col>
           <Col className="gutter-row" span={6}>
-            <SecondaryCardContainer />
+            <div className="right-section">
+          <SecondaryCardContainer />
           </Col>
-          <Col className="gutter-row" span={6}>
             <SideNews />
-          </Col>
+        </div>
+        <Col className="gutter-row" span={6}>
+              </Col>
         </Row>
 
 

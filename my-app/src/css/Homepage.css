@@ -140,7 +140,7 @@ body {
 
 .content-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 2fr;
   grid-gap: 20px;
   padding: 20px;
 }
@@ -148,6 +148,13 @@ body {
 .ticker-container {
   background-color: #f5f5f5;
   padding: 10px;
+}
+
+/* Right section to contain SecondaryCardContainer and SideNews */
+.right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* Container styling */
@@ -178,12 +185,12 @@ body {
   transition: left 0.3s ease-in-out;
   z-index: 1000;
   padding: 20px;
-  box-shadow: 2px 0px 5px rgba(0,0,0,0.5);
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Close button styling */
 .menu-close {
-  background-color: transparent;
+  background-color: #000;
   border: none;
   cursor: pointer;
   position: absolute;
@@ -213,6 +220,7 @@ body {
 .menu-items a:hover {
   color: #0073e6;
 }
+
 
 
 /* body, html {
