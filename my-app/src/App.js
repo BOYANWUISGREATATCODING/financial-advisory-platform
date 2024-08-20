@@ -72,23 +72,91 @@
 
 
 
+// import React from 'react';
+// import Homepage from './Homepage';
+// import './App.css';
+
+// function App() {
+//     return (
+//         <div className="App">
+//             <header className="App-header">
+//                 <h1 className="text-3xl font-bold">Financial Advisory Platform</h1>
+//             </header>
+//             <Homepage />
+//         </div>
+//     );
+// }
+
+// export default App;
+
+
+
 import React from 'react';
 import Homepage from './Homepage';
 import './App.css';
+import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+import { Menu } from 'antd';
 
+// Function to get menu items
+function getItem(label, key, icon, children, type) {
+  return {
+    key,
+    icon,
+    children,
+    label,
+    type,
+  };
+}
+
+// Define the menu items
+const items = [
+  getItem('Navigation One', 'sub1', <MailOutlined />, [
+    getItem('Item 1', null, null, [getItem('Option 1', '1'), getItem('Option 2', '2')], 'group'),
+    getItem('Item 2', null, null, [getItem('Option 3', '3'), getItem('Option 4', '4')], 'group'),
+  ]),
+  getItem('Navigation Two', 'sub2', <AppstoreOutlined />, [
+    getItem('Option 5', '5'),
+    getItem('Option 6', '6'),
+    getItem('Submenu', 'sub3', null, [getItem('Option 7', '7'), getItem('Option 8', '8')]),
+  ]),
+  getItem('Navigation Three', 'sub4', <SettingOutlined />, [
+    getItem('Option 9', '9'),
+    getItem('Option 10', '10'),
+    getItem('Option 11', '11'),
+    getItem('Option 12', '12'),
+  ]),
+];
+
+// Menu click handler
+const onClick = (e) => {
+  console.log('click', e);
+};
+
+// The App component
 function App() {
-    return (
-        <div className="App">
-            <header className="App-header">
-                <h1 className="text-3xl font-bold">Financial Advisory Platform</h1>
-            </header>
-            <Homepage />
-        </div>
-    );
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1 className="text-3xl font-bold">Financial Advisory Platform</h1>
+      </header>
+
+      {/* Render the menu */}
+      <Menu
+        onClick={onClick}
+        style={{
+          width: 256,
+        }}
+        mode="vertical"
+        items={items}
+      />
+
+      {/* Render the homepage content */}
+      <Homepage />
+    </div>
+  );
 }
 
 export default App;
-
 
 
 
