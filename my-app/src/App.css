@@ -84,12 +84,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  padding: 10px 20px;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+#menu-container {
+  position: relative;
 }
 
 nav ul {
