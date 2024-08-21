@@ -139,16 +139,6 @@ function App() {
         <h1 className="text-3xl font-bold">Financial Advisory Platform</h1>
       </header>
 
-      {/* Render the menu */}
-      <Menu
-        onClick={onClick}
-        style={{
-          width: 256,
-        }}
-        mode="vertical"
-        items={items}
-      />
-
       {/* Render the homepage content */}
       <Homepage />
     </div>

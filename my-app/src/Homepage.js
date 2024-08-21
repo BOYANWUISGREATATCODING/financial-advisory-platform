@@ -94,18 +94,18 @@ import "./css/Homepage.css";
 import FeaturedCard from "./FeaturedCard";
 import SecondaryCardContainer from "./SecondaryCardContainer";
 import { Row, Col } from 'antd';
-import App from './App';
 
 function Homepage() {
   return (
     <div className="homepage">
       <header className="App-header">
-        <App />
+        <div className="display-flex">
         <Navbar />
-        <Ticker />
-        <QuickLinks />
+        {/* <QuickLinks /> */}
+        </div>
       </header>
       <Stock />
+      <Ticker />
       <div>
         <Row gutter={16}>
           <Col className="gutter-row" span={12}>

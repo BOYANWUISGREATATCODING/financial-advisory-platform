@@ -221,6 +221,10 @@ body {
   color: #0073e6;
 }
 
+.display-flex {
+  display: flex;
+}
+
 
 
 /* body, html {
