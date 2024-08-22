@@ -56,12 +56,12 @@ const Navbar = () => {
         open={open}
       >
         <Menu
-    onClick={onClick}
-    style={{
-      width: 256,
-    }}
-    mode="vertical"
-    items={items}
+          onClick={onClick}
+          style={{
+          width: 256,
+          }}
+          mode="vertical"
+          items={items}
   />
       </Drawer>
 
@@ -73,6 +73,13 @@ const Navbar = () => {
           <li className="navbar-item">Investing</li>
           <li className="navbar-item">Tech</li>
           <li className="navbar-item">Politics</li>
+          <ul className="navbar-search">
+            <input type="text" placeholder="搜索" className="search-input" />
+            <img src={`${process.env.PUBLIC_URL}/search icon.png`} alt="Search Icon" className="search-icon" />
+          {/* <button className="search-button">
+            <i className="search-icon"></i>
+          </button> */}
+          </ul>
         </ul>
       </nav>
     </>

@@ -136,11 +136,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="text-3xl font-bold">Financial Advisory Platform</h1>
+      <img src={`${process.env.PUBLIC_URL}/team_logo.png`} alt="Team Logo" className="App-logo" />
+        <h1 className="text-3xl font-bold">金汇通达</h1>
       </header>
-
       {/* Render the homepage content */}
       <Homepage />
+      <footer className="App-footer">
+        <p>2024 Financial News Platform. All rights reserved.</p>
+      </footer>
     </div>
   );
 }

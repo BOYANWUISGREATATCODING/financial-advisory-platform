@@ -53,7 +53,7 @@
 
 @media (min-width: 576px) {
   .container {
-    max-width: 540px; 
+    max-width: 540px;
   }
 }
 
@@ -77,16 +77,27 @@
 
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .App-logo {
-  height: 40px;
+  height: 80px; /* Adjust as needed */
+  margin-right: 20px; /* Space between logo and title */
+}
+
+.App-title {
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 .App-header {
-  background-color: #000;
+  background-color: #002f6c;
   color: #fff;
-  padding: 10px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
   text-align: center;
 }
 
@@ -116,12 +127,27 @@ nav ul li a:hover {
 }
 
 .App-footer {
-  background-color: #282c34;
-  padding: 10px 20px;
+  background-color: #002f6c;
+  padding: 10px;
   color: white;
-  position: fixed;
+  text-align: center;
+  /* position: fixed; */
   width: 100%;
   bottom: 0;
+  font-size: 1.5em;
+  left: 0; /* Aligns the footer to the left */
+  width: 100%; /* Ensures the footer spans the entire width of the page */
+  z-index: 1000; /* Ensures the footer is on top of other elements */
+}
+
+
+/* html, body {
+  height: 100%;
+  margin: 0;
+} */
+
+.content {
+  padding-bottom: 60px;
 }
 
 main {
