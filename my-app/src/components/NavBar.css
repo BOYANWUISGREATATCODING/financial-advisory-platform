@@ -21,4 +21,53 @@
   .navbar-item:hover {
     text-decoration: underline;
   }
+
+  .navbar-search {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  .search-input {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    padding-right: 30px; /* Add padding to the right to make space for the icon */
+    width: 200px; /* Set a fixed width */
+  }
   
+  .search-button {
+    display: none; /* Hide the search button */
+    }
+    /* background-color: #003366;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: white; */
+  
+  .search-icon:before {
+    content: "\f002"; /* Unicode for the search icon */
+    font-family: "Font Awesome 5 Free"; /* Assuming you're using FontAwesome */
+    font-weight: 900;
+    color: white;
+  }
+
+  .search-input:focus {
+    outline: none;
+    border-color: #0073e6; /* Highlight border color */
+    box-shadow: 0 0 5px rgba(0, 115, 230, 0.5); /* Slight shadow */
+  }
+
+  .search-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px; /* Space between the icon and input field */
+    position: right;
+    right: 10px; /* Position it inside the right side */
+    top: 50%;
+  }
+
