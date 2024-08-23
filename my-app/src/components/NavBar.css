@@ -38,7 +38,7 @@
     padding-right: 30px; /* Add padding to the right to make space for the icon */
     width: 200px; /* Set a fixed width */
   }
-  
+
   .search-button {
     display: none; /* Hide the search button */
     }
@@ -48,7 +48,7 @@
     padding: 5px 10px;
     cursor: pointer;
     color: white; */
-  
+
   .search-icon:before {
     content: "\f002"; /* Unicode for the search icon */
     font-family: "Font Awesome 5 Free"; /* Assuming you're using FontAwesome */

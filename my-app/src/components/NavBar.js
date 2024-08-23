@@ -153,11 +153,11 @@ const Navbar = () => {
       <nav className="navbar ml-2">
         <ul className="navbar-list">
           <li onClick={showDrawer} className="navbar-item"><MenuUnfoldOutlined /></li>
-          <li className="navbar-item">Markets</li>
-          <li className="navbar-item">Business</li>
-          <li className="navbar-item">Investing</li>
-          <li className="navbar-item">Tech</li>
-          <li className="navbar-item">Politics</li>
+          <li className="navbar-item">现货市场</li>
+          <li className="navbar-item">金融市场</li>
+          <li className="navbar-item">地区市场</li>
+          <li className="navbar-item">宏观</li>
+          <li className="navbar-item">微观</li>
           <ul className="navbar-search">
             <input type="text" placeholder="搜索" className="search-input" />
             <img src={`${process.env.PUBLIC_URL}/search icon.png`} alt="Search Icon" className="search-icon" />
