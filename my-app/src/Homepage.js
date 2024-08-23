@@ -94,14 +94,26 @@ import FeaturedCard from "./FeaturedCard";
 import SecondaryCardContainer from "./SecondaryCardContainer";
 import { Row, Col } from 'antd';
 import MarketMovers from "./components/MarketMovers";
+import { useState } from 'react'
 
-function Homepage() {
+function Homepage () {
+  const [news, setNews] = useState([])
+
+  function fetchNews (eleTag) {
+    fetch(`http://localhost:8000/news/ele_tags/${eleTag}/10`, {
+      method: 'GET'
+    }).then(res => {
+      console.log(res)
+      setNews(res.data.map(item => item.fields))
+    });
+  }
+
   return (
     <div className="homepage">
       <header className="App-header">
         <div className="display-flex">
-        <Navbar />
-        {/* <QuickLinks /> */}
+          <Navbar handleOnSelect={fetchNews} />
+          {/* <QuickLinks /> */}
         </div>
       </header>
       <Stock />
@@ -115,7 +127,7 @@ function Homepage() {
             <SecondaryCardContainer />
           </Col>
           <Col className="gutter-row" span={6}>
-            <SideNews />
+            <SideNews news={news} />
           </Col>
         </Row>
       </div>
