@@ -100,7 +100,7 @@ function Homepage () {
   const [news, setNews] = useState([])
 
   function fetchNews (eleTag) {
-    fetch(`http://localhost:8000/news/ele_tags/${eleTag}/10`, {
+    fetch(`http://127.0.0.1:8000/news/ele_tags/${eleTag}/10`, {
       method: 'GET'
     }).then(res => {
       console.log(res)
