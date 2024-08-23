@@ -87,13 +87,13 @@
 import React from "react";
 import Navbar from "./components/NavBar";
 import Ticker from "./components/Ticker";
-import QuickLinks from "./components/QuickLinks";
 import SideNews from "./components/SideNews";
 import Stock from "./components/Stock";
 import "./css/Homepage.css";
 import FeaturedCard from "./FeaturedCard";
 import SecondaryCardContainer from "./SecondaryCardContainer";
 import { Row, Col } from 'antd';
+import MarketMovers from "./components/MarketMovers";
 
 function Homepage() {
   return (
@@ -119,6 +119,7 @@ function Homepage() {
           </Col>
         </Row>
       </div>
+      <MarketMovers />
     </div>
   );
 }
