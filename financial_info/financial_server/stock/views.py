@@ -19,6 +19,10 @@ def stock_info(request, market_loc):
                 'ts_code':'000001.SH'
             },
             {
+                'name':'沪深300HKD',
+                'ts_code':'000300HKD00.CSI'
+            },
+            {
                 'name':'深证A指',
                 'ts_code':'399107.SZ'
             },
@@ -39,6 +43,10 @@ def stock_info(request, market_loc):
             {
                 'name':'恒生指数',
                 'ts_code':'HSI'
+            },
+            {
+                'name':'恒生科技指数',
+                'ts_code':'HKTECH'
             },
             {
                 'name':'日经225指数',
@@ -65,6 +73,10 @@ def stock_info(request, market_loc):
             {
                 'name':'富时100指数',
                 'ts_code':'FTSE'
+            },
+            {
+                'name':'加拿大S&P/TSX指数',
+                'ts_code':'SPTSX'
             }
         ]
     }
