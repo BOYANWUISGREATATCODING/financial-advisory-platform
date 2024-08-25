@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import './SideNews.css';
 
 const SideNews = ({ news = [] }) => {
+  // if (!Array.isArray(news) || news.length === 0) {
+  //   return <p>No news available.</p>;
+  // }
+
   function generateNewsList () {
     return news.map((item, index) => {
       return (
