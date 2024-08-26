@@ -37,7 +37,8 @@ def index(request):
 # def get_png(request, ele_tag):
 
 def get_news_by_ele_tags(request, ele_tag, nums):
-    selected_news = models.News.objects.filter(ele_tag = ele_tag).order_by('-date_time')
+    selected_news = models.News.objects.raw(f'select distinct * from News where ele_tag="{ele_tag}" order by date_time DESC')
+    # selected_news = selected_news.order_by('-date_time')
     if(len(selected_news)>nums):
         selected_news = selected_news[:nums]
     serialized_data = serializers.serialize('json', selected_news)
@@ -53,7 +54,7 @@ def get_news_by_ele_tags(request, ele_tag, nums):
     return HttpResponse(json.dumps(dic),content_type="application/json",charset="utf-8")
 
 def get_news_by_industry_tags(request,industry_tag, nums):
-    selected_news = models.News.objects.filter(industry_tag = industry_tag).order_by('-date_time')
+    selected_news = models.News.objects.raw(f'select distinct * from News where industry_tag="{industry_tag}" order by date_time DESC')
     if(len(selected_news)>nums):
         selected_news = selected_news[:nums]
     serialized_data = serializers.serialize('json', selected_news)
@@ -76,14 +77,10 @@ def get_news_by_theme(request,theme_tag, nums):
     '宏观': ['地缘局势', '人物', '经济数据', '政策', '央行', '灾害事故'],
     '微观': ['公司', '基金', '投行机构']
     }
-
-    for i in range(len(dic[theme_tag])):
-        print(i)
-        if(i==0):
-            selected = models.News.objects.filter(ele_tag = dic[theme_tag][i])
-        else:
-            selected = selected.union(models.News.objects.filter(ele_tag = dic[theme_tag][i]))
-    selected_news = selected.order_by('-date_time')
+    
+    key_str = ' or '.join([f'ele_tag="{dic[theme_tag][i]}"' for i in range(len(dic[theme_tag]))])
+    print(f'select distinct * from News where {key_str} order by date_time DESC')
+    selected_news = models.News.objects.raw(f'select distinct * from News where {key_str} order by date_time DESC')
     if(len(selected_news)>nums):
         selected_news = selected_news[:nums]
     serialized_data = serializers.serialize('json', selected_news)

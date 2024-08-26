@@ -19,8 +19,8 @@ def stock_info(request, market_loc):
                 'ts_code':'000001.SH'
             },
             {
-                'name':'沪深300HKD',
-                'ts_code':'000300HKD00.CSI'
+                'name':'上证A指',
+                'ts_code':'000002.SH'
             },
             {
                 'name':'深证A指',
@@ -90,6 +90,7 @@ def stock_info(request, market_loc):
             df = df.head(1)
             # print(df['close'])
             # print(df)
+            # print(i,df)
             stock_dic['沪深'][i]['price'] = df['close'].item()
             stock_dic['沪深'][i]['change_rate'] = df['pct_chg'].item()
     else:
