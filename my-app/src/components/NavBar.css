@@ -39,9 +39,9 @@
     width: 200px; /* Set a fixed width */
   }
 
-  .search-button {
-    display: none; /* Hide the search button */
-    }
+  /* .search-button {
+    display: none;
+    } */
     /* background-color: #003366;
     border: none;
     border-radius: 3px;
@@ -65,9 +65,8 @@
   .search-icon {
     width: 20px;
     height: 20px;
-    margin-right: 5px; /* Space between the icon and input field */
-    position: right;
-    right: 10px; /* Position it inside the right side */
+    /* margin-right: 5px; Space between the icon and input field */
+    position: middle;
+    right: 10px;
     top: 50%;
   }
-

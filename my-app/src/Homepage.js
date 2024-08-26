@@ -102,17 +102,24 @@ function Homepage () {
   const [error, setError] = useState(null);   
 
   useEffect(() => {
-    fetchNews('defaultTag');
+    fetchNews({ key: '贵金属', keyPath: ['贵金属', '现货市场'] });
   }, []);
 
   function fetchNews (eleTag) {
     setIsLoading(true);
     setError(null);
 
-
-    fetch(`http://127.0.0.1:8000/news/ele_tags/${eleTag}/10`, {
+    let url = `http://127.0.0.1:8000/news/ele_tags/${eleTag.key}/10`
+    let parentNode = eleTag.keyPath[1]
+    if (parentNode === '现货市场') {
+      url = `http://127.0.0.1:8000/news/ele_tags/${eleTag.key}/10`
+    } else if (parentNode === '金融市场') {
+      url = `http://127.0.0.1:8000/news/ele_tags/${eleTag.key}/10`
+    }
+    fetch(url, {
       method: 'GET'
     })
+
   //   .then(res => {
   //     console.log(res)
   //     setNews(res.data.map(item => item.fields))

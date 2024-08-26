@@ -1,18 +1,18 @@
 import { Menu, Col, Row } from "antd";
-import { useState } from "react";
+import { useState, useEffect} from "react";
 
 const items = [
+  // {
+  //   label: "沪深",
+  //   key: "沪深",
+  // },
   {
-    label: "ASIA",
-    key: "ASIA",
+    label: "亚洲",
+    key: "亚洲",
   },
   {
-    label: "ASIA FX",
-    key: "ASIA FX",
-  },
-  {
-    label: "EUR",
-    key: "EUR",
+    label: "美股",
+    key: "美股",
   },
   {
     label: "PRE-MKT",
@@ -21,17 +21,34 @@ const items = [
 ];
 
 function Stock() {
-  const [current, setCurrent] = useState("ASIA");
+  const [current, setCurrent] = useState("亚洲"); 
   const [list, setList] = useState([
-    { name: "DRX", index: 17726.47, label: "ASIA", percentage: 5 },
-    { name: "DRX", index: 17726.47, label: "ASIA FX", percentage: 5 },
-    { name: "DRX", index: 17726.47, label: "ASIA", percentage: 5 },
-    { name: "DRX", index: 17726.47, label: "EUR", percentage: -5 },
-    { name: "DRX", index: 17726.47, label: "PRE-MKT", percentage: 5 },
+    // {
+    //   "name": "道琼斯工业指数",
+    //   "ts_code": "DJI",
+    //   "price": 41175.08,
+    //   "change_rate": 1.14
+    // },
   ]);
   const menuClick = (e) => {
     setCurrent(e.key);
   };
+
+  useEffect(() => {
+    let ignore = false;
+    fetch(`http://127.0.0.1:8000/stock/${current}`, {
+      method: 'GET'
+    })
+    .then(res => res.json())
+    .then(data => {
+      // console.log(res)
+      if (data&& !ignore) {
+        setList(data)
+      }
+    });
+    return () => { ignore = true; }
+  }, [current])
+
   return (
     <div className="p-[20px]">
       <Menu
@@ -43,13 +60,14 @@ function Stock() {
       <Row gutter={30} className="mt-4">
         {list.map((item) => (
           <Col span={4}>
-            <div className="bg-green-700 text-white rounded h-[100px] font-bold p-2">
+            <div className={`${item.change_rate< 0 ? 'bg-red-700' : 'bg-green-700'} text-white rounded h-[100px] font-bold p-2`}>
               <div className="clearfix">
-                <span className="float-left">ASX 200*</span>
-                <span className="float-right">7,828.80</span>
+              <span className="float-left">{item.name}</span>
+              <span className="float-right">{item.ts_code}</span>
               </div>
               <div className="clearfix">
-                <span className="float-right">{ item.percentage }% </span>
+                <span className="float-right">{ item.change_rate }% </span>
+                <span className="float-left">{item.price}</span>
               </div>
             </div>
           </Col>
