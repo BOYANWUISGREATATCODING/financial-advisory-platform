@@ -46,11 +46,11 @@ def get_news_by_ele_tags(request, ele_tag, nums):
     
     image_path = [f'http://127.0.0.1:8000/news/pics/{i}' for i in random.sample(range(7),4)]
     # print(serialized_data)
+    image_size = [(600,100),(195,100),(800,400),(300,150)]
     for i in range(len(image_path)):
-        if(i==0):
-            dic[i]['image_path'] = image_path[i]+'/800/400'
-        else:
-            dic[i]['image_path'] = image_path[i]+'/300/150'
+        dic[i]['image_paths'] = []
+        for size in image_size:
+            dic[i]['image_paths'].append(image_path[i]+f'/{size[0]}/{size[1]}')
     return HttpResponse(json.dumps(dic),content_type="application/json",charset="utf-8")
 
 def get_news_by_industry_tags(request,industry_tag, nums):
@@ -62,11 +62,11 @@ def get_news_by_industry_tags(request,industry_tag, nums):
     
     image_path = [f'http://127.0.0.1:8000/news/pics/{i}' for i in random.sample(range(7),4)]
     # print(serialized_data)
+    image_size = [(600,100),(195,100),(800,400),(300,150)]
     for i in range(len(image_path)):
-        if(i==0):
-            dic[i]['image_path'] = image_path[i]+'/800/400'
-        else:
-            dic[i]['image_path'] = image_path[i]+'/300/150'
+        dic[i]['image_paths'] = []
+        for size in image_size:
+            dic[i]['image_paths'].append(image_path[i]+f'/{size[0]}/{size[1]}')
     return HttpResponse(json.dumps(dic),content_type="application/json",charset="utf-8")
 
 def get_news_by_theme(request,theme_tag, nums):
@@ -88,9 +88,9 @@ def get_news_by_theme(request,theme_tag, nums):
     
     image_path = [f'http://127.0.0.1:8000/news/pics/{i}' for i in random.sample(range(7),4)]
     # print(serialized_data)
+    image_size = [(600,100),(195,100),(800,400),(300,150)]
     for i in range(len(image_path)):
-        if(i==0):
-            dic[i]['image_path'] = image_path[i]+'/800/400'
-        else:
-            dic[i]['image_path'] = image_path[i]+'/300/150'
+        dic[i]['image_paths'] = []
+        for size in image_size:
+            dic[i]['image_paths'].append(image_path[i]+f'/{size[0]}/{size[1]}')
     return HttpResponse(json.dumps(dic),content_type="application/json",charset="utf-8")
