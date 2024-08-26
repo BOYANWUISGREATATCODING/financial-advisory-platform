@@ -44,7 +44,7 @@ def get_news_by_ele_tags(request, ele_tag, nums):
     serialized_data = serializers.serialize('json', selected_news)
     dic = json.loads(serialized_data)
     
-    image_path = [f'http://127.0.0.1:8000/news/pics/{i}' for i in random.sample(range(7),3)]
+    image_path = [f'http://127.0.0.1:8000/news/pics/{i}' for i in random.sample(range(7),4)]
     # print(serialized_data)
     for i in range(len(image_path)):
         if(i==0):
@@ -60,7 +60,7 @@ def get_news_by_industry_tags(request,industry_tag, nums):
     serialized_data = serializers.serialize('json', selected_news)
     dic = json.loads(serialized_data)
     
-    image_path = [f'http://127.0.0.1:8000/news/pics/{i}' for i in random.sample(range(7),3)]
+    image_path = [f'http://127.0.0.1:8000/news/pics/{i}' for i in random.sample(range(7),4)]
     # print(serialized_data)
     for i in range(len(image_path)):
         if(i==0):
@@ -86,7 +86,7 @@ def get_news_by_theme(request,theme_tag, nums):
     serialized_data = serializers.serialize('json', selected_news)
     dic = json.loads(serialized_data)
     
-    image_path = [f'http://127.0.0.1:8000/news/pics/{i}' for i in random.sample(range(7),3)]
+    image_path = [f'http://127.0.0.1:8000/news/pics/{i}' for i in random.sample(range(7),4)]
     # print(serialized_data)
     for i in range(len(image_path)):
         if(i==0):
