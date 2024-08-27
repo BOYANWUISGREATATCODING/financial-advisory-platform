@@ -108,7 +108,6 @@ function Homepage () {
   function fetchNews (eleTag) {
     setIsLoading(true);
     setError(null);
-
     let url = `http://127.0.0.1:8000/news/ele_tags/${eleTag.key}/10`
     let parentNode = eleTag.keyPath[1]
     if (parentNode === '现货市场') {
@@ -119,14 +118,8 @@ function Homepage () {
     fetch(url, {
       method: 'GET'
     })
-
-  //   .then(res => {
-  //     console.log(res)
-  //     setNews(res.data.map(item => item.fields))
-  //   });
-  // }
-  .then(res => res.json())
-  .then(data => {
+    .then(res => res.json())
+    .then(data => {
     // console.log('Fetched data:', data);
     let jsonData = JSON.parse(data).slice(0, 4);
     console.log('newsData:', jsonData);

@@ -29,5 +29,5 @@
   .main-news {
     width: 100%;
     height: 600px;
-    background: url(/Users/Boyan/financial-advisory-platform/financial_info/financial_server/news/src/p5.jpg) no-repeat center/cover;
+    background: url('./assets/p5.jpg') no-repeat center/cover;
   }
