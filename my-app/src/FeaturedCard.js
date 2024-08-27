@@ -6,7 +6,7 @@ const FeaturedCard = () => {
 
   return (
     <div className="featured-card">
-      <a href="/some-article-link">
+      <a href="https://news.smm.cn/news/102897333">
         <div className='main-news'>
           <div className="featured-card-content">
             <h2 className="featured-card-title">中金：发展液氢储运可能是中期较为现实的运氢降本路径</h2>

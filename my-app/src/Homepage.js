@@ -121,7 +121,7 @@ function Homepage () {
     .then(res => res.json())
     .then(data => {
     // console.log('Fetched data:', data);
-    let jsonData = JSON.parse(data).slice(0, 4);
+    let jsonData = data.slice(0, 4);
     console.log('newsData:', jsonData);
     if (Array.isArray(jsonData)) {
       const newsData = jsonData.map(item => item.fields);

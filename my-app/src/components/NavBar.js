@@ -163,9 +163,8 @@ const Navbar = ({ handleOnSelect }) => {
           <li className="navbar-item">微观</li>
           <ul className="navbar-search">
             <input type="text" placeholder="搜索" className="search-input" />
-            <img src={`${process.env.PUBLIC_URL}/search icon.png`} alt="Search Icon" className="search-icon" />
             <button className="search-button">
-            <i className="search-icon"></i>
+            <img src={`${process.env.PUBLIC_URL}/search icon.png`} alt="Search Icon" className="search-icon" />
           </button>
           </ul>
         </ul>
