@@ -11,15 +11,13 @@ const Navbar = ({ handleOnSelect }) => {
     return {
       key,
       icon,
-      children: children || [],
+      children,
       label,
       type,
     };
   }
   const items = [
     getItem('现货市场', '现货市场', null, [
-      // getItem('Item 1', null, null, [getItem('Option 1', '1'), getItem('Option 2', '2')], 'group'),
-      // getItem('Item 2', null, null, [getItem('Option 3', '3'), getItem('Option 4', '4')], 'group'),\
       getItem('贵金属', '贵金属'),
       getItem('石油', '石油'),
     ]),
@@ -30,7 +28,6 @@ const Navbar = ({ handleOnSelect }) => {
       getItem('债券', '债券'),
       getItem('货币', '货币'),
       getItem('ETF', 'ETF'),
-      // getItem('外汇', 'sub3', null, [getItem('Option 7', '7'), getItem('Option 8', '8')]),
     ]),
     getItem('地区市场', '地区市场', null, [
       getItem('A股', 'A股'),
@@ -97,7 +94,7 @@ const Navbar = ({ handleOnSelect }) => {
       getItem('包装印刷', '包装印刷'),
       getItem('家居用品', '家居用品'),
       getItem('纺织制造', '纺织制造'),
-      getItem('贵金属', '贵金属'),
+      // getItem('贵金属', '贵金属'),
       getItem('其他电源设备', '其他电源设备'),
       getItem('塑料制品', '塑料制品'),
       getItem('化学原料', '化学原料'),
@@ -147,7 +144,6 @@ const Navbar = ({ handleOnSelect }) => {
         open={open}
       >
         <Menu
-          onClick={onClick}
           onSelect={onSelect}
           style={{
             width: 256,
@@ -167,9 +163,8 @@ const Navbar = ({ handleOnSelect }) => {
           <li className="navbar-item">微观</li>
           <ul className="navbar-search">
             <input type="text" placeholder="搜索" className="search-input" />
-            <img src={`${process.env.PUBLIC_URL}/search icon.png`} alt="Search Icon" className="search-icon" />
             <button className="search-button">
-            <i className="search-icon"></i>
+            <img src={`${process.env.PUBLIC_URL}/search icon.png`} alt="Search Icon" className="search-icon" />
           </button>
           </ul>
         </ul>

@@ -2,10 +2,10 @@ import { Menu, Col, Row } from "antd";
 import { useState, useEffect} from "react";
 
 const items = [
-  // {
-  //   label: "沪深",
-  //   key: "沪深",
-  // },
+  {
+    label: "沪深",
+    key: "沪深",
+  },
   {
     label: "亚洲",
     key: "亚洲",
@@ -14,14 +14,10 @@ const items = [
     label: "美股",
     key: "美股",
   },
-  {
-    label: "PRE-MKT",
-    key: "PRE-MKT",
-  },
 ];
 
 function Stock() {
-  const [current, setCurrent] = useState("亚洲"); 
+  const [current, setCurrent] = useState("沪深");
   const [list, setList] = useState([
     // {
     //   "name": "道琼斯工业指数",
