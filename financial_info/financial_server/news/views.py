@@ -56,9 +56,10 @@ def get_news_by_ele_tags(request, ele_tag, nums):
         for size in image_size:
             dic[i]['image_paths'].append(image_path[i]+f'/{size[0]}/{size[1]}')
     for i in range(len(dic)):
-        keywords = summarization.get_summarization(dic[i]['fields']['content'])
-        dic[i]['fields']['content'] = keywords + '\n' + dic[i]['fields']['content']
-        print(keywords)
+        # keywords = summarization.get_summarization(dic[i]['fields']['content'])
+        dic[i]['fields']['content'] = dic[i]['fields']['keywords'] + '\n' + dic[i]['fields']['content']
+        del dic[i]['fields']['keywords']
+        # print(keywords)
     return HttpResponse(json.dumps(dic),content_type="application/json",charset="utf-8")
 
 def get_news_by_industry_tags(request,industry_tag, nums):
@@ -77,9 +78,9 @@ def get_news_by_industry_tags(request,industry_tag, nums):
         for size in image_size:
             dic[i]['image_paths'].append(image_path[i]+f'/{size[0]}/{size[1]}')
     for i in range(len(dic)):
-        keywords = summarization.get_summarization(dic[i]['fields']['content'])
-        dic[i]['fields']['content'] = keywords + '\n' + dic[i]['fields']['content']
-        print(keywords)
+        # keywords = summarization.get_summarization(dic[i]['fields']['content'])
+        dic[i]['fields']['content'] = dic[i]['fields']['keywords'] + '\n' + dic[i]['fields']['content']
+        del dic[i]['fields']['keywords']
     return HttpResponse(json.dumps(dic),content_type="application/json",charset="utf-8")
 
 def get_news_by_theme(request,theme_tag, nums):
@@ -107,7 +108,7 @@ def get_news_by_theme(request,theme_tag, nums):
         for size in image_size:
             dic[i]['image_paths'].append(image_path[i]+f'/{size[0]}/{size[1]}')
     for i in range(len(dic)):
-        keywords = summarization.get_summarization(dic[i]['fields']['content'])
-        dic[i]['fields']['content'] = keywords + '\n' + dic[i]['fields']['content']
-        print(keywords)
+        # keywords = summarization.get_summarization(dic[i]['fields']['content'])
+        dic[i]['fields']['content'] = dic[i]['fields']['keywords'] + '\n' + dic[i]['fields']['content']
+        del dic[i]['fields']['keywords']
     return HttpResponse(json.dumps(dic),content_type="application/json",charset="utf-8")

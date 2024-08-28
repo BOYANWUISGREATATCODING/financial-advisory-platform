@@ -21,7 +21,7 @@ prompt_2 = '''
 def get_summarization(new):
     prompt_1 = new+prompt_2
     completion = client.chat.completions.create(
-        model="gpt-4-turbo",
+        model="gpt-3.5-turbo",
         messages=[
             {
                 'role': 'user',
