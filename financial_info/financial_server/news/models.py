@@ -9,6 +9,7 @@ class News(models.Model):
     src = models.CharField(max_length=10)
     industry_tag = models.CharField(max_length=10)
     ele_tag = models.CharField(max_length=10)
+    keywords = models.CharField(max_length=100,default='')
 
     def __str__(self):
         return self.content
