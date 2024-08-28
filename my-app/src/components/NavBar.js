@@ -22,7 +22,7 @@ const Navbar = ({ handleOnSelect }) => {
       getItem('石油', '石油'),
     ]),
     getItem('金融市场', '金融市场', null, [
-      getItem('外呼', '外呼'),
+      getItem('外汇', '外汇'),
       getItem('期货', '期货'),
       getItem('数字货币', '数字货币'),
       getItem('债券', '债券'),
