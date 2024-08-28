@@ -6,8 +6,8 @@ import constants
 import pandas as pd
 from io import StringIO
 import os
-os.environ['http_proxy'] = '127.0.0.1:7890'
-os.environ['https_proxy'] = '127.0.0.1:7890'
+os.environ['http_proxy'] = '127.0.0.1:9999'
+os.environ['https_proxy'] = '127.0.0.1:9999'
 api_key = 'sk-oKq3aGK_aLIU0IFDx22yy0mswlrgvg76D-p7TtGIM7T3BlbkFJv92IV4eLjDf4DoDlXeK4Q3mUlUCBuZ_sEorgXO6s4A'
 api_key = 'sk-e4838792df484cb8852e45b0502113bb'
 from openai import OpenAI
